@@ -1,0 +1,13 @@
+{
+    "limitedIPs" : {
+        "127.0.0.1" : 40,
+        "140.0.0.1" : 10
+    },
+    "limitedPaths" : {
+        "/hola" : 15,
+        "/" : 100
+    },
+    "limitWindow" : 1,
+    "REDIS_PORT" : 7000,
+    "REDIS_HOST" : "localhost"
+}
