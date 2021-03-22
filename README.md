@@ -11,6 +11,6 @@ Para priorizar la performance y escalabilidad la aplicacion:
 
 -Las instancias de la aplicacion mantienen el estado mediante un servidor Redis. Este escala verticalmente hasta el límite, luego escala horizontalmente agregando nuevas masters, slaves, y réplicas al cluster.
 
--Los logs se delegan a una cola FIFO hacia la base de datos de manera asincronica para mayor performance de la aplicacion.
+-Los logs se delegan a una cola FIFO que los inserta en una base de datos ElasticSearch.
 
--Una aplicacion web muestra estadisticas de uso del proxy nutriendose de los logs almacenados en la base de datos.
+-Utilizamos Kibana para crear graficos de uso de la aplicacion.
