@@ -2,7 +2,7 @@
 //para limitar la cantidad de requests por IP, por path de destino, o por ambas
 
 const redis = require('ioredis')
-const sendLogToDB = require('../sendLogToDB')
+const logger = require('../logger')
 
 //instancia local redis para prueba de concepto. (sudo apt install redis-server | redis-server --port 7000)
 //el escenario real demanda un cluster ya que todas las instancias del proxy deben compartir estado
@@ -59,11 +59,11 @@ const rateLimitMiddleware = async (req, res, next) => {
         const rejectedByIP = await isOverLimit(ip, limitByIp)
         const rejectedByPath = await isOverLimit(path, limitByPath)
         if (rejectedByIP || rejectedByPath) {
-            sendLogToDB(ip, path, 'Rechazada', rejectedByIP ? 'IP' : 'Path')
+            logger(ip, path, 'Rechazada', rejectedByIP ? 'IP' : 'Path')
             res.status(429).send('Demasiadas requests');
         }
         else {
-            sendLogToDB(ip, path, 'Permitida')
+            logger(ip, path, 'Permitida')
             next()
         }
 
