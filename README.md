@@ -15,18 +15,18 @@ Para priorizar la performance y escalabilidad la aplicacion:
 
 
 
-##Arquitectura:
+## Arquitectura:
 
 ![API Proxy](docs/apiproxy.png?raw=true "API Proxy")
 
 
 
-##Diagrama funcional:
+## Diagrama funcional:
 
 ![Diagrama funcional](docs/funcional.png?raw=true "Diagrama funcional")
 
 
-###Uso:
+### Uso:
 
 Instancia local Redis:
 ```
