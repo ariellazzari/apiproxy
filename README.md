@@ -15,13 +15,34 @@ Para priorizar la performance y escalabilidad la aplicacion:
 
 
 
-Arquitectura:
+##Arquitectura:
 
 ![API Proxy](docs/apiproxy.png?raw=true "API Proxy")
 
 
 
-Diagrama funcional:
+##Diagrama funcional:
 
 ![Diagrama funcional](docs/funcional.png?raw=true "Diagrama funcional")
+
+
+###Uso:
+
+Instancia local Redis:
+```
+sudo apt install redis-server
+redis-server --port 7000
+```
+
+Servidor destino:
+```
+npm run target
+```
+
+Aplicacion API proxy:
+```
+npm run start
+```
+
+
 
