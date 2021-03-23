@@ -9,8 +9,6 @@ Para priorizar la performance y escalabilidad la aplicacion:
 
 -La aplicación en node.js corre con cluster en contenedores docker (o similar). Escala horizontalmente agregando instancias.
 
--Las instancias de la aplicacion mantienen el estado mediante un servidor Redis. Este escala verticalmente hasta el límite, luego escala horizontalmente agregando nuevas masters, slaves, y réplicas al cluster.
+-Las instancias de la aplicacion mantienen el estado mediante un servidor Redis. Este escala verticalmente hasta el límite, luego escala horizontalmente agregando nuevas masters, slaves, y réplicas al cluster. Se usa Winston para redirigir los logs hacia un servidor de ElasticSearch.
 
--Los logs se delegan a una cola FIFO que los inserta en una base de datos ElasticSearch.
-
--Utilizamos Kibana para crear graficos de uso de la aplicacion.
+-Utilizamos Kibana para monitorear la aplicacion.
